@@ -518,9 +518,8 @@ body {
     margin: 0 auto 2.2rem; /* más espacio debajo */
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 12px 32px rgba(46, 84, 166, 0.2);
     transition: transform 0.4s ease;
-    background: #f0f7ff; /* fondo sutil azul claro para resaltar */
+    background: transparent; /* fondo sutil azul claro para resaltar */
 }
 
 .service-icon img {
