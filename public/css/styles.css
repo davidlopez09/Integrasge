@@ -3,7 +3,7 @@
     --secondary-blue: #3b68c6;
     --accent-blue: #4a7de0;
     --gray-dark: #2c3e50;
-    --gray-medium: #7f8c8d;
+    --gray: #7f8c8d;
     --gray-light: #ecf0f1;
     --white: #ffffff;
     --gold: #c9a961;
@@ -49,7 +49,7 @@ body {
 }
 
 .logo {
-    height: 70px;
+    height: 90px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -69,7 +69,7 @@ body {
     text-decoration: none;
     color: var(--gray-dark);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     letter-spacing: 0.3px;
     transition: color 0.3s ease;
     position: relative;
@@ -543,7 +543,7 @@ body {
 }
 
 .service-description {
-    color: var(--gray-medium);
+    color: var(--gray);
     line-height: 1.8;
     margin-bottom: 2.2rem;
     font-size: 1.05rem; /* texto un poco más legible */
@@ -599,69 +599,127 @@ body {
     }
 }
 
-/* Contact Section */
+/* ==========================================================================
+   Contact Section – Versión Profesional y Compacta (2025/2026)
+   ========================================================================== */
+
 .contact-section {
-    padding: 8rem 3rem;
-    background: var(--white);
+    padding: 8rem 2rem 6rem; /* Reducido para que toda la sección sea menos alta */
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem; /* Menos margen inferior */
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--gray-dark);
+    margin-bottom: 1.2rem;
+    line-height: 1.15;
+}
+
+.section-lead {
+    font-size: 1.2rem;
+    color: var(--gray);
+    line-height: 1.6;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 4rem;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4.5rem;
+    align-items: start;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.2rem;
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1.6rem;
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.3rem;
     flex-shrink: 0;
+    box-shadow: 0 6px 20px rgba(46, 84, 166, 0.22);
+}
+
+.contact-icon svg {
+    width: 26px;
+    height: 26px;
 }
 
 .contact-details h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--gray-dark);
     margin-bottom: 0.5rem;
 }
 
 .contact-details p {
-    color: var(--gray-medium);
-    line-height: 1.6;
+    color: var(--gray);
+    line-height: 1.65;
+    font-size: 1.02rem;
 }
 
+.contact-details a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--secondary-blue);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Formulario – Versión Compacta y Profesional
+   ========================================================================== */
+
 .contact-form {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 3rem;
+    background: white;
+    padding: 2.4rem; /* Mucho más compacto que antes */
     border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(46, 84, 166, 0.05);
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.35rem; /* Reducido significativamente */
+    position: relative;
 }
 
 .form-group label {
@@ -669,51 +727,96 @@ body {
     font-weight: 600;
     color: var(--gray-dark);
     margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid transparent;
+    padding: 0.95rem 1.25rem; /* Campos más bajos */
+    border: 2px solid #e2e8f0;
     border-radius: 12px;
-    font-family: "Montserrat", sans-serif;
+    font-family: inherit;
     font-size: 1rem;
+    background: #f9fafb;
     transition: all 0.3s ease;
-    background: white;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-blue);
-    box-shadow: 0 0 0 4px rgba(46, 84, 166, 0.1);
+    box-shadow: 0 0 0 4px rgba(46, 84, 166, 0.12);
+    background: white;
 }
 
 .form-group textarea {
+    min-height: 105px; /* Mucho más corto */
     resize: vertical;
-    min-height: 120px;
 }
 
 .btn-submit {
     width: 100%;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: white;
-    padding: 1.1rem;
+    padding: 1.1rem; /* Botón más compacto */
     border: none;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(46, 84, 166, 0.25);
     text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(46, 84, 166, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(46, 84, 166, 0.35);
+}
+
+/* ==========================================================================
+   Responsive – Ajustes para móviles y tablets
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .contact-section {
+        padding: 7rem 1.5rem 5rem;
+    }
+
+    .section-title {
+        font-size: 2.6rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section-lead {
+        font-size: 1.1rem;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-icon svg {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 /* Footer */
@@ -739,7 +842,7 @@ body {
 }
 
 .footer-description {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgb(255, 255, 255);
     line-height: 1.8;
     margin-bottom: 2rem;
 }
@@ -760,7 +863,7 @@ body {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -775,7 +878,7 @@ body {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     font-size: 0.9rem;
 }
 
@@ -819,6 +922,52 @@ body {
     width: 35px;
     height: 35px;
     fill: white;
+}
+.whatsapp-bubble {
+    position: fixed;
+    bottom: 45px; /* Más cerca del botón para que parezca que sale de él */
+    right: 100px; /* ← ¡Aquí está el cambio clave! Empieza más a la derecha */
+    background: #ffffff;
+    color: #111;
+    padding: 10px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    white-space: nowrap;
+    opacity: 0;
+
+    /* Empieza fuera a la derecha + ligeramente más pequeño y desplazado */
+    transform: translateX(140px) scale(0.75); /* ← más lejos para que el deslizamiento sea claro */
+    transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); /* curva más natural y bouncy */
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Flecha apuntando hacia abajo (ahora más centrada respecto al botón) */
+.whatsapp-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    right: 25px; /* ajustado para que la punta quede más cerca del centro del botón */
+    border: 8px solid transparent;
+    border-top-color: #ffffff;
+}
+
+/* Estado final: completamente visible, en su posición correcta */
+.whatsapp-bubble.show {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Responsive */

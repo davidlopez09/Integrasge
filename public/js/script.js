@@ -61,10 +61,31 @@ document.querySelectorAll(".whatsapp-btn").forEach((button) => {
         const mensaje = `Hola, vengo de su sitio web, necesito asesoría sobre el servicio ${servicio}`;
 
         // IMPORTANTE: Cambia el número por el tuyo (incluye código de país, sin +, sin espacios ni guiones)
-        const numeroWhatsApp = "573103716894"; // ← ← ← Pon aquí tu número real
+        const numeroWhatsApp = "573103939734"; // ← ← ← Pon aquí tu número real
 
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(url, "_blank");
     });
+});
+
+// Mostrar burbuja de WhatsApp al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+    const bubble = document.getElementById("whatsappBubble");
+
+    if (bubble) {
+        // Mostrar después de un pequeño retraso (para que no sea tan abrupto)
+        setTimeout(() => {
+            bubble.classList.add("show");
+        }, 800); // 0.8 segundos después de cargar
+
+        // Ocultar después de 5 segundos desde que apareció
+        setTimeout(() => {
+            bubble.classList.remove("show");
+            // Opcional: eliminar del DOM después de la animación
+            setTimeout(() => {
+                bubble.style.display = "none";
+            }, 500);
+        }, 5800); // 800ms + 5000ms
+    }
 });
