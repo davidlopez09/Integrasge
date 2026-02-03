@@ -51,3 +51,20 @@ document.querySelectorAll(".service-card").forEach((card) => {
     card.style.transition = "all 0.6s ease";
     observer.observe(card);
 });
+
+// WhatsApp redirect para botones de servicios
+document.querySelectorAll(".whatsapp-btn").forEach((button) => {
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const servicio = this.getAttribute("data-service");
+        const mensaje = `Hola, vengo de su sitio web, necesito asesoría sobre el servicio ${servicio}`;
+
+        // IMPORTANTE: Cambia el número por el tuyo (incluye código de país, sin +, sin espacios ni guiones)
+        const numeroWhatsApp = "573103716894"; // ← ← ← Pon aquí tu número real
+
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+        window.open(url, "_blank");
+    });
+});
