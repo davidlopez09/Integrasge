@@ -112,7 +112,7 @@ body {
     box-shadow: 0 8px 20px rgba(46, 84, 166, 0.3);
 }
 
-/* Hero Section */
+/* Hero Section - unificado, sin duplicados */
 .hero {
     position: relative;
     height: 100vh;
@@ -123,59 +123,18 @@ body {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%231a1a2e"/><path d="M10 10h20v20H10zM40 10h20v20H40zM70 10h20v20H70zM10 40h20v20H10zM40 40h20v20H40zM70 40h20v20H70zM10 70h20v20H10zM40 70h20v20H40zM70 70h20v20H70z" fill="%232E54A6" opacity="0.03"/></svg>'),
-        radial-gradient(circle at 20% 50%, rgba(46, 84, 166, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 30%, rgba(59, 104, 198, 0.1) 0%, transparent 50%);
-    background-size:
-        100px 100px,
-        100% 100%,
-        100% 100%;
-    opacity: 0.4;
-    animation: subtleMove 20s ease-in-out infinite;
-}
-
-@keyframes subtleMove {
-    0%,
-    100% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(20px, 20px);
-    }
-}
-
-/* Hero principal - agregamos position relative y fondo fallback */
-.hero {
-    position: relative;
-    min-height: 90vh; /* o la altura que uses actualmente */
-    background: var(--primary-blue); /* fallback si la imagen no carga */
-    overflow: hidden;
-    display: flex;
-    align-items: center; /* centra verticalmente el contenido */
-}
-
-/* Nueva capa: imagen de fondo sutil (debajo del overlay) */
+/* Capa de imagen de fondo (sin cambios) */
 .hero-bg-image {
     position: absolute;
-    inset: 0; /* top:0; left:0; right:0; bottom:0; */
-    /* background-image: url("https://thumbs.dreamstime.com/b/calculator-pen-printed-receipts-desk-convey-financial-accounting-setting-notebook-coffee-cup-visible-415133549.jpg"); */
+    inset: 0;
     background-image: url("https://img.freepik.com/foto-gratis/concepto-escritorio-vista-superior-bloc-notas_23-2148604955.jpg?semt=ais_hybrid&w=740&q=80");
-
     background-size: cover;
     background-position: center;
-    opacity: 0.1; /* ¡Ajusta esto! 0.08–0.15 según lo tenue que quieras. Prueba 0.09 o 0.12 */
+    opacity: 0.1;
     z-index: 1;
 }
 
-/* Tu overlay SVG original → queda encima de la imagen */
+/* Overlay SVG (sin cambios) */
 .hero-image-overlay {
     position: absolute;
     top: 0;
@@ -186,31 +145,45 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0.6;
-    z-index: 2; /* encima de la imagen de fondo */
+    z-index: 2;
 }
 
-/* Contenido → siempre encima de todo */
+/* Contenido encima de todo */
 .hero-content {
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 3rem;
-    z-index: 3; /* subimos a 3 para estar seguro */
+    z-index: 3;
     animation: fadeInUp 1s ease-out;
 }
 
-/* Resto de tus estilos sin cambios */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Redes sociales – alineadas horizontalmente */
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem; /* distancia entre íconos */
+    margin: 1.5rem 0 2.5rem 0;
 }
 
+.redes a {
+    display: block;
+    line-height: 0; /* evita espacio extra debajo de la imagen */
+    transition: transform 0.25s ease;
+}
+
+.redes img {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+/* Efecto hover opcional pero recomendado */
+.redes a:hover {
+    transform: translateY(-4px);
+}
+
+/* Resto de estilos sin cambios (subtitle, title, description, buttons, animaciones, btn, etc.) */
 .hero-subtitle {
     color: var(--gold);
     font-size: 0.95rem;
@@ -223,7 +196,7 @@ body {
 
 .hero-title {
     font-family: "Lora", serif;
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 700;
     color: var(--white);
     line-height: 1.2;
@@ -248,7 +221,7 @@ body {
     animation: fadeInUp 1s ease-out 0.8s both;
 }
 
-/* Botones sin cambios */
+/* Botones (sin cambios) */
 .btn {
     padding: 1.1rem 2.5rem;
     font-size: 1rem;
@@ -287,6 +260,17 @@ body {
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Título principal más impactante */
 .section-subtitle {
     color: var(--primary-blue);
@@ -307,18 +291,18 @@ body {
 }
 
 .about-section {
-    padding: 6rem 2rem 8rem;
+    padding: 5rem 2rem 6rem;
     background: var(--white);
 }
 
 .section-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .section-subtitle {
@@ -343,10 +327,10 @@ body {
 .about-main-content {
     display: grid;
     grid-template-columns: 5fr 7fr; /* texto ~42%, imagen ~58% – más angosto el texto */
-    gap: 5rem;
+    gap: 3.5rem;
     align-items: center;
-    margin-bottom: 6rem;
-    min-height: 520px; /* altura similar al mockup */
+    margin-bottom: 4rem;
+    min-height: 420px; /* altura similar al mockup */
 }
 
 .about-text {
@@ -595,8 +579,8 @@ body {
 }
 
 /* ==========================================================================
-   Contact Section – Versión Profesional y Compacta (2025/2026)
-   ========================================================================== */
+    Contact Section – Versión Profesional y Compacta (2025/2026)
+    ========================================================================== */
 
 .contact-section {
     padding: 8rem 2rem 6rem; /* Reducido para que toda la sección sea menos alta */
@@ -701,8 +685,8 @@ body {
 }
 
 /* ==========================================================================
-   Formulario – Versión Compacta y Profesional
-   ========================================================================== */
+    Formulario – Versión Compacta y Profesional
+    ========================================================================== */
 
 .contact-form {
     background: white;
@@ -769,6 +753,40 @@ body {
 .btn-submit:hover {
     transform: translateY(-3px);
     box-shadow: 0 16px 40px rgba(46, 84, 166, 0.35);
+}
+/* Reutilizamos los estilos del hero para las redes en contacto */
+.contact-redes.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem; /* misma separación que en hero */
+    margin: 1.8rem 0 0 0; /* un poco más de espacio arriba en contacto */
+    justify-content: flex-start; /* o center si prefieres centrado */
+}
+
+.contact-redes.redes img {
+    width: 36px; /* ← mismo tamaño exacto que en hero */
+    height: 36px;
+    display: block;
+    border-radius: 8px; /* opcional: si tus iconos tienen bordes redondeados */
+    object-fit: contain; /* evita distorsión */
+}
+
+.contact-redes.redes a {
+    display: block;
+    line-height: 0;
+    transition: transform 0.25s ease;
+}
+
+.contact-redes.redes a:hover {
+    transform: translateY(-4px); /* mismo efecto hover que hero */
+}
+
+/* Si quieres que se vea mejor en móvil */
+@media (max-width: 768px) {
+    .contact-redes.redes {
+        gap: 1.2rem;
+        justify-content: center;
+    }
 }
 
 /* ==========================================================================
@@ -875,6 +893,43 @@ body {
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 0.9rem;
+}
+/* Redes en el footer – reutiliza .redes del hero */
+.footer-redes.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem; /* un poco más de espacio que en hero (ajusta si quieres) */
+    margin-top: 1.8rem; /* separación arriba del párrafo */
+    justify-content: flex-start; /* izquierda, o cambia a center si prefieres centrado */
+}
+
+.footer-redes.redes img {
+    width: 40px; /* un poco más grandes en footer para mejor visibilidad */
+    height: 40px;
+    display: block;
+    border-radius: 10px; /* opcional: redondeado suave */
+    object-fit: contain;
+    filter: brightness(1.1); /* opcional: para que resalten más en fondo oscuro */
+    transition: all 0.3s ease;
+}
+
+.footer-redes.redes a:hover img {
+    transform: translateY(-5px) scale(1.1); /* efecto más pronunciado en footer */
+    filter: brightness(1.3) drop-shadow(0 4px 8px rgba(46, 84, 166, 0.4));
+}
+
+/* Ajuste en móvil */
+@media (max-width: 768px) {
+    .footer-redes.redes {
+        justify-content: center;
+        gap: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .footer-redes.redes img {
+        width: 38px;
+        height: 38px;
+    }
 }
 
 /* WhatsApp Float Button */
@@ -1063,5 +1118,6 @@ body {
 
 /* Smooth scrolling */
 html {
+    font-size: 15px;
     scroll-behavior: smooth;
 }

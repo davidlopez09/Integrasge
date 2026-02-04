@@ -32,20 +32,32 @@
 
         <!-- Hero Section -->
         <section class="hero" id="inicio">
-            <!-- Capa de imagen sutil de fondo (calculadoras, finanzas tenue) -->
+            <!-- Capa de imagen sutil de fondo -->
             <div class="hero-bg-image"></div>
 
-            <!-- Overlay SVG con gradiente y formas abstractas (el que ya tenías) -->
+            <!-- Overlay SVG con formas abstractas -->
             <div class="hero-image-overlay"></div>
 
             <!-- Contenido principal -->
             <div class="hero-content">
-                <div class="hero-subtitle">Desde 2022 a su servicio</div>
+                <div class="hero-subtitle">-- Desde 2022 a su servicio --</div>
                 <h1 class="hero-title typewriter">Gestión Empresarial con Excelencia y Precisión</h1>
                 <p class="hero-description">
                     Soluciones contables integrales y servicios de outsourcing empresarial diseñados para impulsar el
                     crecimiento y la eficiencia de su organización.
                 </p>
+
+                <!-- Redes sociales – ahora en fila horizontal -->
+                <div class="redes">
+                    <a href="https://www.facebook.com/integrasge" target="_blank" aria-label="Facebook">
+                        <img src="./public/image/iconoFacebook.webp" alt="Facebook" />
+                    </a>
+                    <a href="https://www.instagram.com/integrasge/" target="_blank" aria-label="Instagram">
+                        <img src="./public/image/instagramLogo.jpg" alt="Instagram" />
+                    </a>
+                </div>
+
+                <!-- Botones -->
                 <div class="hero-buttons">
                     <a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
                     <a href="#contacto" class="btn btn-secondary">Solicitar Consulta</a>
@@ -97,8 +109,8 @@
                         <div class="stat-label">Compromiso</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Soporte Continuo</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Cumplimiento Normativo</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">+50</div>
@@ -277,6 +289,7 @@
                 <div class="contact-grid">
                     <!-- Info lateral -->
                     <div class="contact-info">
+                        <!-- Correo -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -288,10 +301,11 @@
                             </div>
                             <div class="contact-details">
                                 <h3>Correo Electrónico</h3>
-                                <p><a href="mailto:contacto@integrasge.com">contacto@integrasge.com</a><br /></p>
+                                <p><a href="mailto:contacto@integrasge.com">contacto@integrasge.com</a></p>
                             </div>
                         </div>
 
+                        <!-- Teléfono (solo números, sin horario) -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -304,13 +318,38 @@
                                 <h3>Teléfono</h3>
                                 <p>
                                     <a href="tel:+573103939734">+57 (310) 393-9734</a><br />
-                                    <o>Lunes a Viernes: 8:00 AM - 6:00 PM</o> <br />
-                                    <o>Sabado: 9:00 AM - 2:00 PM</o><br />
+                                    <a href="tel:+576053455132">(605) 345-5132</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Horario de Atención – nuevo ítem independiente -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <!-- Ícono de reloj (estilo línea, igual que los otros – de Lucide/Feather) -->
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <circle cx="12" cy="13" r="8" />
+                                    <polyline points="12 9 12 13 14 15" />
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Horario de Atención</h3>
+                                <p>
+                                    Lunes a Viernes: 8:00 AM - 6:00 PM<br />
+                                    Sábado: 9:00 AM - 2:00 PM<br />
                                     Domingo: Cerrado
                                 </p>
                             </div>
                         </div>
 
+                        <!-- Ubicación + redes -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -322,6 +361,21 @@
                                 <h3>Ubicación</h3>
                                 <p>Barranquilla, Colombia</p>
                                 <b>CR 43 72 122 OF 506 ED CENTRO DE PROFESIONALES</b>
+
+                                <!-- Redes sociales (ya las tienes bien) -->
+                                <div class="contact-redes redes">
+                                    <a href="https://www.facebook.com/integrasge" target="_blank" aria-label="Facebook">
+                                        <img src="./public/image/iconoFacebook.webp" alt="Facebook" />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/integrasge/"
+                                        target="_blank"
+                                        aria-label="Instagram"
+                                    >
+                                        <img src="./public/image/instagramLogo.jpg" alt="Instagram" />
+                                    </a>
+                                    <!-- Si quieres agregar LinkedIn más adelante, solo añade otro <a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -367,12 +421,25 @@
         <footer class="footer">
             <div class="footer-content">
                 <div>
-                    <img src="./public/image/logo.png" alt="INTEGRASGE Logo" class="footer-logo" />
-                    <p class="footer-description">
-                        Servicios de gestión empresarial con excelencia, transparencia y compromiso. Somos su aliado
-                        estratégico para el crecimiento sostenible de su organización.
-                    </p>
+                    <div>
+                        <img src="./public/image/logoblanco.png" alt="INTEGRASGE Logo" class="footer-logo" />
+                        <p class="footer-description">
+                            Servicios de gestión empresarial con excelencia, transparencia y compromiso. Somos su aliado
+                            estratégico para el crecimiento sostenible de su organización.
+                        </p>
+
+                        <!-- Redes sociales – mismo estilo y archivos que en hero y contacto -->
+                        <div class="footer-redes redes">
+                            <a href="https://www.facebook.com/integrasge" target="_blank" aria-label="Facebook">
+                                <img src="./public/image/iconoFacebook.webp" alt="Facebook" />
+                            </a>
+                            <a href="https://www.instagram.com/integrasge/" target="_blank" aria-label="Instagram">
+                                <img src="./public/image/instagramLogo.jpg" alt="Instagram" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
                 <div>
                     <h3 class="footer-title">Enlaces Rápidos</h3>
                     <ul class="footer-links">
