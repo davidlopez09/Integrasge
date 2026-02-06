@@ -128,10 +128,10 @@ body {
 .hero-bg-image {
     position: absolute;
     inset: 0;
-    background-image: url("https://img.freepik.com/foto-gratis/concepto-escritorio-vista-superior-bloc-notas_23-2148604955.jpg?semt=ais_hybrid&w=740&q=80");
+    background-image: url("../image/eje.png");
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
+    opacity: 0.2;
     z-index: 1;
 }
 
@@ -208,12 +208,15 @@ body {
 
 .hero-description {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgb(255, 255, 255);
     max-width: 900px;
     margin-bottom: 3rem;
     line-height: 1.8;
     font-weight: 300;
     animation: fadeInUp 1s ease-out 0.6s both;
+    text-align: justify;
+    text-align-last: left; /* la última línea del párrafo se alinea a la izquierda */
+    hyphens: auto; /* opcional: mejor división de palabras en español */
 }
 
 .hero-buttons {
