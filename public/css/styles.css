@@ -295,181 +295,285 @@ body {
 }
 
 .about-section {
-    padding: 5rem 2rem 6rem;
-    background: var(--white);
+    padding: 6rem 2rem 8rem;
+    background: linear-gradient(135deg, #002244 0%, #003366 40%, #0055cc 70%, #00a3cc 100%);
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* Texto blanco para alto contraste en fondo oscuro */
+}
+
+/* Overlay de "conexiones globales" sutil (curvas/líneas abstractas como en el mockup) */
+.about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 70%, rgba(0, 163, 204, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+        linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.05) 45%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .section-container {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
+    position: relative;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .section-subtitle {
-    color: var(--primary-blue);
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 4px;
+    color: #0066ff;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    opacity: 0.95;
 }
 
 .section-title {
     font-family: "Lora", serif;
-    font-size: 3.2rem;
-    color: #1a1a1a;
+    font-size: 3.5rem;
+    color: #999da0;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     margin: 0;
 }
 
-/* Bloque principal - texto angosto a la izquierda, ilustración grande a la derecha */
+/* Contenido principal - texto angosto + imagen grande */
 .about-main-content {
     display: grid;
-    grid-template-columns: 6fr 7fr; /* texto ~42%, imagen ~58% – más angosto el texto */
-    gap: 3.5rem;
+    grid-template-columns: 5fr 7fr;
+    gap: 4rem;
     align-items: center;
-    margin-bottom: 4rem;
-    min-height: 490px; /* altura similar al mockup */
+    margin-bottom: 5rem;
+    min-height: 520px;
 }
 
 .about-text {
     font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    padding-right: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.about-subtitle {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-blue);
-    margin: 0 0 1.4rem 0;
-    line-height: 1.3;
-    font-family: "Lora", serif;
+    color: var(--white);
+    line-height: 1.85;
+    padding-right: 1.5rem;
 }
 
 .about-text p {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.6rem;
 }
 
 .about-text strong {
-    color: #222;
-    font-weight: 00;
+    color: #003366;
+    font-weight: 700;
 }
 
 .about-image {
-    border-radius: 24px;
+    border-radius: 28px;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 85, 204, 0.14);
+    transition: transform 0.4s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-8px);
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* contain para que se vea completa la ilustración */
+    object-fit: contain;
     object-position: center;
+    transition: transform 0.5s ease;
 }
 
-/* Estadísticas debajo, centradas y compactas */
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Estadísticas - con degradado azul premium */
 .about-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.2rem;
     margin: 0 auto;
-    max-width: 1100px;
+    max-width: 1180px;
 }
 
 .stat-card {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #3b82f6 100%);
-    padding: 2.2rem 1.6rem;
-    border-radius: 20px;
+    background: linear-gradient(135deg, #0055cc 0%, #3b82f6 100%);
+    padding: 2.4rem 1.8rem;
+    border-radius: 24px;
     text-align: center;
     color: white;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.14), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
 }
 
 .stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+    transform: translateY(-14px) scale(1.03);
+    box-shadow: 0 25px 60px rgba(59, 130, 246, 0.38);
 }
 
 .stat-number {
-    font-size: 3.4rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 0.6rem;
     font-family: "Lora", serif;
+    letter-spacing: -1px;
 }
 
 .stat-label {
-    font-size: 1rem;
-    font-weight: 500;
-    opacity: 0.95;
+    font-size: 1.05rem;
+    font-weight: 600;
+    opacity: 0.96;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 1100px) {
     .about-main-content {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 4rem;
         min-height: auto;
     }
-
     .about-text {
         padding-right: 0;
-        text-align: center; /* centrado en móvil para mejor legibilidad */
+        text-align: center;
     }
+    .section-title {
+        font-size: 3rem;
+    }
+}
 
+@media (max-width: 768px) {
+    .about-section {
+        padding: 5rem 1.8rem 6rem;
+    }
     .section-title {
         font-size: 2.6rem;
     }
 }
 
 @media (max-width: 576px) {
-    .about-section {
-        padding: 4rem 1.5rem 6rem;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-    }
-
     .about-stats {
         grid-template-columns: 1fr;
-        gap: 1.6rem;
+        gap: 1.8rem;
+    }
+    .stat-number {
+        font-size: 3.2rem;
     }
 }
 
-/* Services Section */
 .services-section {
-    padding: 8rem 3rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 8rem 3rem 10rem;
+    background: linear-gradient(135deg, #002244 0%, #003366 40%, #0055cc 70%, #00a3cc 100%);
     position: relative;
+    overflow: hidden;
+    color: #ffffff;
 }
 
+/* Overlay de conexiones globales/estratégicas */
+.services-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 70%, rgba(0, 163, 204, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+        linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.05) 45%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Overlay inferior para profundidad (skyline sutil) */
+.services-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 220px;
+    background: linear-gradient(to top, rgba(0, 34, 68, 0.55) 0%, transparent 100%);
+    opacity: 0.75;
+    z-index: 1;
+}
+
+.section-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header de la sección */
+.services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.services-title {
+    font-family: "Lora", serif;
+    font-size: 3.8rem;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.services-subtitle {
+    color: #60a5fa;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Grid de tarjetas */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    gap: 2.8rem;
     margin-top: 4rem;
+    position: relative;
+    z-index: 2;
 }
 
+/* Tarjetas de servicio - contenido más bajo y equilibrado */
 .service-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 3.5rem 2.5rem; /* más padding para acomodar imágenes grandes */
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 2.2rem 2.4rem 3.2rem; /* padding superior reducido drásticamente */
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
+    backdrop-filter: blur(8px);
+    min-height: 480px; /* altura mínima para uniformidad */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* empieza desde arriba pero sin exceso de espacio */
 }
 
 .service-card::before {
@@ -478,91 +582,117 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 6px; /* línea superior más visible */
-    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    height: 8px;
+    background: linear-gradient(90deg, #0055cc 0%, #3b82f6 50%, #00a3cc 100%);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 60px rgba(46, 84, 166, 0.18);
+    transform: translateY(-16px);
+    box-shadow: 0 30px 70px rgba(0, 85, 204, 0.35);
 }
 
 .service-card:hover::before {
     transform: scaleX(1);
 }
 
-/* Imágenes MÁS GRANDES */
+/* Imagen/icono - bajada y con menos margen superior */
 .service-icon {
-    width: 307px; /* ← tamaño aumentado (antes 100px) */
-    height: 180px;
-    margin: 0 auto 2.2rem; /* más espacio debajo */
-    border-radius: 24px;
+    width: 240px;
+    height: 150px;
+    margin: 0.8rem auto 1.8rem; /* margen superior muy reducido */
+    border-radius: 20px;
     overflow: hidden;
     transition: transform 0.4s ease;
-    background: transparent; /* fondo sutil azul claro para resaltar */
+    background: rgba(0, 85, 204, 0.08);
 }
 
 .service-icon img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* ← contain para ver la imagen completa (mejor para ilustraciones) */
-    /* Si alguna se ve mal con contain, cámbiala a cover individualmente */
+    object-fit: contain;
     display: block;
 }
 
 .service-card:hover .service-icon {
-    transform: scale(1.08); /* efecto hover más suave y grande */
+    transform: scale(1.08);
 }
 
+/* Título - espacio ajustado */
 .service-title {
-    font-size: 1.6rem; /* título un poco más grande para balancear */
+    font-size: 1.75rem;
     font-weight: 700;
-    color: var(--gray-dark);
-    margin-bottom: 1.2rem;
+    color: #002244;
+    margin: 0.6rem 0 1.2rem; /* margen superior reducido */
     font-family: "Lora", serif;
 }
 
+/* Descripción */
 .service-description {
-    color: var(--gray);
+    color: #475569;
     line-height: 1.8;
-    margin-bottom: 2.2rem;
-    font-size: 1.05rem; /* texto un poco más legible */
+    margin-bottom: 2rem;
+    font-size: 1.08rem;
+    flex-grow: 1; /* empuja el botón hacia abajo si hay espacio */
 }
 
+/* Botón - empujado hacia abajo con flex */
 .btn-service {
     background: transparent;
-    color: var(--primary-blue);
-    border: 2px solid var(--primary-blue);
-    padding: 0.9rem 2.2rem;
-    font-size: 1rem;
+    color: #0055cc;
+    border: 2px solid #0055cc;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 50px;
     display: inline-block;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    margin-top: auto; /* ¡clave! empuja el botón al fondo de la tarjeta */
 }
 
 .btn-service:hover {
-    background: var(--primary-blue);
+    background: linear-gradient(135deg, #0055cc 0%, #3b82f6 100%);
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(46, 84, 166, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 85, 204, 0.4);
+    border-color: transparent;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
+        gap: 2.2rem;
     }
-
     .service-icon {
-        width: 160px;
-        height: 160px;
+        width: 220px;
+        height: 140px;
+        margin: 0.6rem auto 1.6rem;
+    }
+    .service-card {
+        padding: 2rem 2.2rem 3rem;
+        min-height: 460px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 6rem 2rem 8rem;
+    }
+    .services-title {
+        font-size: 3rem;
+    }
+    .service-card {
+        padding: 1.8rem 1.8rem 2.8rem;
+        min-height: auto;
+    }
+    .service-icon {
+        width: 200px;
+        height: 130px;
+        margin: 0.5rem auto 1.4rem;
     }
 }
 
@@ -571,154 +701,189 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
     .service-icon {
-        width: 140px;
-        height: 140px;
+        width: 180px;
+        height: 110px;
+        margin: 0.4rem auto 1.2rem;
     }
-
-    .service-card {
-        padding: 2.5rem 1.8rem;
+    .service-title {
+        font-size: 1.6rem;
     }
 }
 
 /* ==========================================================================
-   Contact Section – Versión Compacta 2025/2026 (optimizada para menos altura)
+   Contact Section – Versión ULTRA COMPACTA 2025/2026
    ========================================================================== */
 .contact-section {
-    padding: 5rem 1.5rem 4rem; /* mucho menos padding arriba/abajo */
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    padding: 3.5rem 2rem 3rem; /* mucho menos altura total */
+    background: linear-gradient(135deg, #002244 0%, #003366 40%, #0055cc 70%, #00a3cc 100%);
     position: relative;
     overflow: hidden;
+    color: #ffffff;
+}
+
+/* Overlay de conexiones globales/estratégicas (igual que en otras secciones) */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 70%, rgba(0, 163, 204, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+        linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.05) 45%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Overlay inferior sutil */
+.contact-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to top, rgba(0, 34, 68, 0.5) 0%, transparent 100%);
+    opacity: 0.7;
+    z-index: 1;
 }
 
 .contact-container {
     max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
+/* Header – más compacto */
 .section-header {
     text-align: center;
     max-width: 720px;
-    margin: 0 auto 2.5rem; /* reducido de 4rem */
+    margin: 0 auto 2rem; /* reducido */
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-blue);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold); /* azul claro para destacar */
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.6rem;
 }
 
 .section-title {
-    font-size: 2.4rem; /* un poco más pequeño para balance */
+    font-family: "Lora", serif;
+    font-size: 2.6rem; /* más pequeño para menos altura */
     font-weight: 800;
-    color: var(--gray-dark);
-    margin-bottom: 0.8rem;
-    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .section-lead {
-    font-size: 1.05rem;
-    color: var(--gray);
+    font-size: 1.02rem;
+    color: #e0f2fe;
     line-height: 1.5;
     margin: 0;
 }
 
+/* Grid – más compacto */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    gap: 3rem; /* reducido de 4.5rem */
+    gap: 2.2rem; /* reducido de 3rem */
     align-items: start;
 }
 
+/* Info de contacto – menos espacio */
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem; /* mucho menos espacio entre items */
+    gap: 1rem; /* mucho menos espacio entre items */
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.2rem; /* gap más pequeño */
+    gap: 1rem; /* gap reducido */
 }
 
 .contact-icon {
-    width: 48px; /* íconos un poco más pequeños */
-    height: 48px;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    width: 44px; /* íconos más pequeños */
+    height: 44px;
+    background: linear-gradient(135deg, #0055cc 0%, #3b82f6 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(46, 84, 166, 0.18);
+    box-shadow: 0 4px 12px rgba(0, 85, 204, 0.25);
 }
 
 .contact-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
 }
 
 .contact-details h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: var(--gray-dark);
-    margin-bottom: 0.3rem;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
 }
 
 .contact-details p,
 .contact-details b {
-    color: var(--gray);
-    line-height: 1.55;
-    font-size: 0.98rem;
+    color: #e0f2fe;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 .contact-details a {
-    color: var(--primary-blue);
+    color: var(--white);
     text-decoration: none;
 }
 
 .contact-details a:hover {
-    color: var(--secondary-blue);
+    color: #ffffff;
     text-decoration: underline;
 }
 
 /* ==========================================================================
-   Formulario – Más compacto aún
+   Formulario – Ultra compacto
    ========================================================================== */
 .contact-form {
-    background: white;
-    padding: 1.8rem; /* reducido de 2.4rem */
+    background: rgba(255, 255, 255, 0.94);
+    padding: 1.4rem; /* reducido drásticamente */
     border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
-    border: 1px solid rgba(46, 84, 166, 0.04);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 85, 204, 0.08);
+    backdrop-filter: blur(6px);
 }
 
 .form-group {
-    margin-bottom: 1.1rem; /* reducido de 1.35rem */
+    margin-bottom: 0.9rem; /* menos espacio entre campos */
 }
 
 .form-group label {
     display: block;
     font-weight: 600;
-    color: var(--gray-dark);
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
+    color: #002244;
+    margin-bottom: 0.35rem;
+    font-size: 0.88rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.85rem 1.2rem; /* campos más bajos */
+    padding: 0.75rem 1rem; /* campos más bajos */
     border: 2px solid #e2e8f0;
     border-radius: 10px;
     font-family: inherit;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     background: #f9fafb;
     transition: all 0.25s ease;
 }
@@ -726,35 +891,85 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(46, 84, 166, 0.1);
+    border-color: #0055cc;
+    box-shadow: 0 0 0 3px rgba(0, 85, 204, 0.12);
     background: white;
 }
 
 .form-group textarea {
-    min-height: 95px; /* más corto */
+    min-height: 80px; /* textarea más corta */
     resize: vertical;
 }
 
 .btn-submit {
     width: 100%;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    background: linear-gradient(135deg, #0055cc 0%, #3b82f6 100%);
     color: white;
-    padding: 1rem;
+    padding: 0.9rem;
     border: none;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.02rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(46, 84, 166, 0.22);
+    box-shadow: 0 5px 18px rgba(0, 85, 204, 0.25);
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
+    margin-top: 0.8rem;
 }
 
 .btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(46, 84, 166, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 85, 204, 0.35);
+}
+
+/* Responsive – aún más compacto en móvil */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-form {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 3rem 1.5rem 2.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .section-header {
+        margin-bottom: 1.8rem;
+    }
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .contact-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-subtitle {
+        font-size: 1.2rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.92rem;
+    }
+    .btn-submit {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
 }
 
 /* Redes en contacto (mantener consistencia) */
