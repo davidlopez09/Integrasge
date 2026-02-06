@@ -35,7 +35,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             const navbarHeight = document.querySelector(".navbar").offsetHeight;
 
             // Calcular la posición con offset
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - -60;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - -50;
 
             // Scroll suave a la posición ajustada
             window.scrollTo({
