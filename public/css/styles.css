@@ -327,11 +327,11 @@ body {
 /* Bloque principal - texto angosto a la izquierda, ilustración grande a la derecha */
 .about-main-content {
     display: grid;
-    grid-template-columns: 5fr 7fr; /* texto ~42%, imagen ~58% – más angosto el texto */
+    grid-template-columns: 6fr 7fr; /* texto ~42%, imagen ~58% – más angosto el texto */
     gap: 3.5rem;
     align-items: center;
     margin-bottom: 4rem;
-    min-height: 420px; /* altura similar al mockup */
+    min-height: 490px; /* altura similar al mockup */
 }
 
 .about-text {
@@ -359,7 +359,7 @@ body {
 
 .about-text strong {
     color: #222;
-    font-weight: 600;
+    font-weight: 00;
 }
 
 .about-image {
@@ -580,11 +580,10 @@ body {
 }
 
 /* ==========================================================================
-    Contact Section – Versión Profesional y Compacta (2025/2026)
-    ========================================================================== */
-
+   Contact Section – Versión Compacta 2025/2026 (optimizada para menos altura)
+   ========================================================================== */
 .contact-section {
-    padding: 8rem 2rem 6rem; /* Reducido para que toda la sección sea menos alta */
+    padding: 5rem 1.5rem 4rem; /* mucho menos padding arriba/abajo */
     background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
     position: relative;
     overflow: hidden;
@@ -598,7 +597,7 @@ body {
 .section-header {
     text-align: center;
     max-width: 720px;
-    margin: 0 auto 4rem; /* Menos margen inferior */
+    margin: 0 auto 2.5rem; /* reducido de 4rem */
 }
 
 .section-subtitle {
@@ -607,77 +606,78 @@ body {
     color: var(--primary-blue);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem; /* un poco más pequeño para balance */
     font-weight: 800;
     color: var(--gray-dark);
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8rem;
     line-height: 1.15;
 }
 
 .section-lead {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     color: var(--gray);
-    line-height: 1.6;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    gap: 4.5rem;
+    gap: 3rem; /* reducido de 4.5rem */
     align-items: start;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
+    gap: 1.4rem; /* mucho menos espacio entre items */
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.6rem;
+    gap: 1.2rem; /* gap más pequeño */
 }
 
 .contact-icon {
-    width: 56px;
-    height: 56px;
+    width: 48px; /* íconos un poco más pequeños */
+    height: 48px;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(46, 84, 166, 0.22);
+    box-shadow: 0 4px 15px rgba(46, 84, 166, 0.18);
 }
 
 .contact-icon svg {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
 }
 
 .contact-details h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--gray-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
-.contact-details p {
+.contact-details p,
+.contact-details b {
     color: var(--gray);
-    line-height: 1.65;
-    font-size: 1.02rem;
+    line-height: 1.55;
+    font-size: 0.98rem;
 }
 
 .contact-details a {
     color: var(--primary-blue);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .contact-details a:hover {
@@ -686,52 +686,50 @@ body {
 }
 
 /* ==========================================================================
-    Formulario – Versión Compacta y Profesional
-    ========================================================================== */
-
+   Formulario – Más compacto aún
+   ========================================================================== */
 .contact-form {
     background: white;
-    padding: 2.4rem; /* Mucho más compacto que antes */
-    border-radius: 20px;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(46, 84, 166, 0.05);
+    padding: 1.8rem; /* reducido de 2.4rem */
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(46, 84, 166, 0.04);
 }
 
 .form-group {
-    margin-bottom: 1.35rem; /* Reducido significativamente */
-    position: relative;
+    margin-bottom: 1.1rem; /* reducido de 1.35rem */
 }
 
 .form-group label {
     display: block;
     font-weight: 600;
     color: var(--gray-dark);
-    margin-bottom: 0.5rem;
-    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.95rem 1.25rem; /* Campos más bajos */
+    padding: 0.85rem 1.2rem; /* campos más bajos */
     border: 2px solid #e2e8f0;
-    border-radius: 12px;
+    border-radius: 10px;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.98rem;
     background: #f9fafb;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-blue);
-    box-shadow: 0 0 0 4px rgba(46, 84, 166, 0.12);
+    box-shadow: 0 0 0 3px rgba(46, 84, 166, 0.1);
     background: white;
 }
 
 .form-group textarea {
-    min-height: 105px; /* Mucho más corto */
+    min-height: 95px; /* más corto */
     resize: vertical;
 }
 
@@ -739,22 +737,79 @@ body {
     width: 100%;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: white;
-    padding: 1.1rem; /* Botón más compacto */
+    padding: 1rem;
     border: none;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 25px rgba(46, 84, 166, 0.25);
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(46, 84, 166, 0.22);
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;
 }
 
 .btn-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(46, 84, 166, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(46, 84, 166, 0.3);
 }
+
+/* Redes en contacto (mantener consistencia) */
+.contact-redes.redes {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.contact-redes.redes img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.25s ease;
+}
+
+.contact-redes.redes a:hover img {
+    transform: translateY(-3px);
+}
+
+/* Responsive – ajustes móviles */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.8rem;
+    }
+    .contact-section {
+        padding: 4rem 1.2rem 3.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .contact-form {
+        padding: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-lead {
+        font-size: 1rem;
+    }
+    .contact-icon {
+        width: 44px;
+        height: 44px;
+    }
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
 /* Reutilizamos los estilos del hero para las redes en contacto */
 .contact-redes.redes {
     display: flex;

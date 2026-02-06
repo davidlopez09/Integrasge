@@ -23,15 +23,24 @@ document.querySelector("form").addEventListener("submit", function (e) {
     this.reset();
 });
 
-// Smooth scroll for navigation links
+// Smooth scroll for navigation links con offset para navbar
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
+        const targetId = this.getAttribute("href");
+        const target = document.querySelector(targetId);
+
         if (target) {
-            target.scrollIntoView({
+            // Obtener la altura del navbar
+            const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+            // Calcular la posición con offset
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - -60;
+
+            // Scroll suave a la posición ajustada
+            window.scrollTo({
+                top: targetPosition,
                 behavior: "smooth",
-                block: "start",
             });
         }
     });
