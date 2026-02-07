@@ -1,3 +1,8 @@
+/* ============================================================================
+   INTEGRASGE - CSS COMPLETO Y TOTALMENTE RESPONSIVE
+   Versión optimizada 2026 - Todas las secciones ajustadas
+   ============================================================================ */
+
 :root {
     --primary-blue: #2e54a6;
     --secondary-blue: #3b68c6;
@@ -22,7 +27,15 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation */
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+/* ============================================================================
+   NAVIGATION - RESPONSIVE
+   ============================================================================ */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -112,19 +125,22 @@ body {
     box-shadow: 0 8px 20px rgba(46, 84, 166, 0.3);
 }
 
-/* Hero Section - unificado, sin duplicados */
+/* ============================================================================
+   HERO SECTION - CORREGIDO Y RESPONSIVE
+   ============================================================================ */
+
 .hero {
-    margin-top: 30px;
     position: relative;
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 120px; /* Espacio para el navbar fijo */
+    padding-bottom: 3rem;
 }
 
-/* Capa de imagen de fondo (sin cambios) */
 .hero-bg-image {
     position: absolute;
     inset: 0;
@@ -135,7 +151,6 @@ body {
     z-index: 1;
 }
 
-/* Overlay SVG (sin cambios) */
 .hero-image-overlay {
     position: absolute;
     top: 0;
@@ -149,42 +164,16 @@ body {
     z-index: 2;
 }
 
-/* Contenido encima de todo */
 .hero-content {
     position: relative;
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 3rem;
     z-index: 3;
     animation: fadeInUp 1s ease-out;
 }
 
-/* Redes sociales – alineadas horizontalmente */
-.redes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.4rem; /* distancia entre íconos */
-    margin: 1.5rem 0 2.5rem 0;
-}
-
-.redes a {
-    display: block;
-    line-height: 0; /* evita espacio extra debajo de la imagen */
-    transition: transform 0.25s ease;
-}
-
-.redes img {
-    width: 36px;
-    height: 36px;
-    display: block;
-}
-
-/* Efecto hover opcional pero recomendado */
-.redes a:hover {
-    transform: translateY(-4px);
-}
-
-/* Resto de estilos sin cambios (subtitle, title, description, buttons, animaciones, btn, etc.) */
 .hero-subtitle {
     color: var(--gold);
     font-size: 0.95rem;
@@ -215,17 +204,54 @@ body {
     font-weight: 300;
     animation: fadeInUp 1s ease-out 0.6s both;
     text-align: justify;
-    text-align-last: left; /* la última línea del párrafo se alinea a la izquierda */
-    hyphens: auto; /* opcional: mejor división de palabras en español */
+    text-align-last: left;
+    hyphens: auto;
+}
+
+/* Redes sociales horizontales */
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin: 1.5rem 0 2.5rem 0;
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.redes a {
+    display: block;
+    line-height: 0;
+    transition: transform 0.25s ease;
+}
+
+.redes img {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+.redes a:hover {
+    transform: translateY(-4px);
 }
 
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
     animation: fadeInUp 1s ease-out 0.8s both;
 }
 
-/* Botones (sin cambios) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botones generales */
 .btn {
     padding: 1.1rem 2.5rem;
     font-size: 1rem;
@@ -264,38 +290,12 @@ body {
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Título principal más impactante */
-.section-subtitle {
-    color: var(--primary-blue);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-}
-
-.section-title {
-    font-family: "Lora", serif;
-    font-size: 2.5rem; /* un poco más grande pero no exagerado */
-    color: var(--gray-dark);
-    font-weight: 700;
-    line-height: 1.25;
-    margin: 0;
-}
+/* ============================================================================
+   ABOUT SECTION - RESPONSIVE
+   ============================================================================ */
 
 .about-section {
-    padding: 6rem 2rem 7rem; /* un poco menos alto que antes */
+    padding: 6rem 2rem 7rem;
     background: linear-gradient(135deg, #002244 0%, #003366 40%, #0055cc 70%, #00a3cc 100%);
     position: relative;
     overflow: hidden;
@@ -323,7 +323,7 @@ body {
 
 .section-header {
     text-align: center;
-    margin-bottom: 3.5rem; /* menos espacio abajo del header */
+    margin-bottom: 3.5rem;
 }
 
 .section-subtitle {
@@ -337,21 +337,20 @@ body {
 
 .section-title {
     font-family: "Lora", serif;
-    font-size: 3.2rem; /* más equilibrado */
+    font-size: 3.2rem;
     color: #ffffff;
     font-weight: 700;
     line-height: 1.15;
     margin: 0;
 }
 
-/* Contenido principal - foto MÁS PEQUEÑA y texto más ancho */
 .about-main-content {
     display: grid;
-    grid-template-columns: 6fr 5fr; /* ¡cambio clave! texto más ancho (60%), foto más angosta (40%) */
+    grid-template-columns: 6fr 5fr;
     gap: 3.5rem;
     align-items: center;
     margin-bottom: 4.5rem;
-    min-height: 480px; /* altura mínima más baja */
+    min-height: 480px;
 }
 
 .about-text {
@@ -375,13 +374,13 @@ body {
     overflow: hidden;
     box-shadow: 0 18px 40px rgba(0, 85, 204, 0.22);
     transition: transform 0.4s ease;
-    max-width: 100%; /* evita desborde */
+    max-width: 100%;
 }
 
 .about-image img {
     width: 100%;
-    height: auto; /* cambio clave: height auto + max-height */
-    max-height: 420px; /* ¡foto más pequeña verticalmente! */
+    height: auto;
+    max-height: 420px;
     object-fit: contain;
     object-position: center;
     display: block;
@@ -396,7 +395,6 @@ body {
     transform: scale(1.04);
 }
 
-/* Estadísticas (sin cambios mayores, solo un poco más compactas) */
 .about-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -433,77 +431,39 @@ body {
     opacity: 0.95;
 }
 
-/* Responsive - foto aún más pequeña en pantallas menores */
-@media (max-width: 1100px) {
-    .about-main-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        min-height: auto;
-    }
-    .about-text {
-        padding-right: 0;
-        text-align: center;
-    }
-    .about-image img {
-        max-height: 380px; /* más pequeña en tablet */
-    }
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        padding: 5rem 1.5rem 6rem;
-    }
-    .section-title {
-        font-size: 2.6rem;
-    }
-    .about-image img {
-        max-height: 320px; /* mucho más pequeña en móvil */
-    }
-}
-
-@media (max-width: 576px) {
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: 1.6rem;
-    }
-    .stat-number {
-        font-size: 3rem;
-    }
-    .about-image img {
-        max-height: 280px;
-    }
-}
+/* ============================================================================
+   SERVICES SECTION - RESPONSIVE
+   ============================================================================ */
 
 .services-section {
-    padding: 7rem 3rem 9rem;               /* un poco menos alto total */
+    padding: 7rem 3rem 9rem;
     background: linear-gradient(135deg, #002244 0%, #003366 40%, #0055cc 70%, #00a3cc 100%);
     position: relative;
     overflow: hidden;
     color: #ffffff;
 }
 
-/* Overlays se mantienen iguales (no los toco) */
-.services-section::before { /* ... igual que antes */ }
-.services-section::after { /* ... igual que antes */ }
-
-.section-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+.services-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 70%, rgba(0, 163, 204, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Header más compacto */
 .services-header {
     text-align: center;
-    margin-bottom: 4rem;                   /* menos espacio debajo del título */
+    margin-bottom: 4rem;
     position: relative;
     z-index: 2;
 }
 
 .services-title {
     font-family: "Lora", serif;
-    font-size: 3.5rem;                     /* un poco más pequeño */
+    font-size: 3.5rem;
     color: #ffffff;
     font-weight: 700;
     line-height: 1.15;
@@ -519,28 +479,26 @@ body {
     margin: 0;
 }
 
-/* Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
-    margin-top: 3rem;                      /* menos margen arriba del grid */
+    margin-top: 3rem;
     position: relative;
     z-index: 2;
 }
 
-/* Tarjetas - espacio superior MÍNIMO */
 .service-card {
     background: rgba(255, 255, 255, 0.93);
     border-radius: 22px;
-    padding: 1.4rem 2rem 3rem;             /* ← padding superior muy bajo (era 2.2rem) */
+    padding: 1.4rem 2rem 3rem;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
     text-align: center;
     backdrop-filter: blur(8px);
-    min-height: 440px;                     /* altura mínima más baja */
+    min-height: 440px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -569,11 +527,10 @@ body {
     transform: scaleX(1);
 }
 
-/* Imagen - aún más pegada arriba */
 .service-icon {
     width: 220px;
     height: 135px;
-    margin: 0.4rem auto 1.3rem;            /* margen superior casi eliminado */
+    margin: 0.4rem auto 1.3rem;
     border-radius: 18px;
     overflow: hidden;
     transition: transform 0.4s ease;
@@ -591,17 +548,15 @@ body {
     transform: scale(1.07);
 }
 
-/* Título - mínimo espacio arriba */
 .service-title {
     font-size: 1.7rem;
     font-weight: 700;
     color: #002244;
-    margin: 0.3rem 0 1rem;                 /* casi pegado arriba */
+    margin: 0.3rem 0 1rem;
     font-family: "Lora", serif;
     line-height: 1.25;
 }
 
-/* Descripción - compacta */
 .service-description {
     color: #475569;
     line-height: 1.75;
@@ -610,7 +565,6 @@ body {
     flex-grow: 1;
 }
 
-/* Botón - siempre al fondo */
 .btn-service {
     background: transparent;
     color: #0055cc;
@@ -622,7 +576,7 @@ body {
     border-radius: 50px;
     display: inline-block;
     transition: all 0.4s ease;
-    margin-top: auto;                      /* empuja al fondo */
+    margin-top: auto;
 }
 
 .btn-service:hover {
@@ -633,76 +587,18 @@ body {
     border-color: transparent;
 }
 
-/* Responsive - aún más compacto */
-@media (max-width: 992px) {
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-    }
-    .service-icon {
-        width: 200px;
-        height: 125px;
-        margin: 0.3rem auto 1.2rem;
-    }
-    .service-card {
-        padding: 1.2rem 1.8rem 2.8rem;
-        min-height: 420px;
-    }
-}
+/* ============================================================================
+   CONTACT SECTION - RESPONSIVE
+   ============================================================================ */
 
-@media (max-width: 768px) {
-    .services-section {
-        padding: 5.5rem 2rem 7.5rem;
-    }
-    .services-title {
-        font-size: 2.9rem;
-    }
-    .services-header {
-        margin-bottom: 3.2rem;
-    }
-    .service-card {
-        padding: 1.1rem 1.6rem 2.6rem;
-        min-height: auto;
-    }
-    .service-icon {
-        width: 180px;
-        height: 110px;
-        margin: 0.3rem auto 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-    }
-    .service-icon {
-        width: 160px;
-        height: 100px;
-        margin: 0.2rem auto 0.9rem;
-    }
-    .service-title {
-        font-size: 1.55rem;
-        margin: 0.2rem 0 0.9rem;
-    }
-    .service-description {
-        font-size: 1rem;
-        margin-bottom: 1.4rem;
-    }
-}
-
-/* ==========================================================================
-   Contact Section – Versión ULTRA COMPACTA 2025/2026
-   ========================================================================== */
 .contact-section {
-    padding: 3.5rem 2rem 3rem; /* mucho menos altura total */
+    padding: 3.5rem 2rem 3rem;
     background: linear-gradient(135deg, #002244 0%, #003366 40%, #0055cc 70%, #00a3cc 100%);
     position: relative;
     overflow: hidden;
     color: #ffffff;
 }
 
-/* Overlay de conexiones globales/estratégicas (igual que en otras secciones) */
 .contact-section::before {
     content: "";
     position: absolute;
@@ -715,7 +611,6 @@ body {
     z-index: 1;
 }
 
-/* Overlay inferior sutil */
 .contact-section::after {
     content: "";
     position: absolute;
@@ -735,32 +630,6 @@ body {
     z-index: 2;
 }
 
-/* Header – más compacto */
-.section-header {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 2rem; /* reducido */
-}
-
-.section-subtitle {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--gold); /* azul claro para destacar */
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 0.6rem;
-}
-
-.section-title {
-    font-family: "Lora", serif;
-    font-size: 2.6rem; /* más pequeño para menos altura */
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 0.6rem;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
 .section-lead {
     font-size: 1.02rem;
     color: #e0f2fe;
@@ -768,29 +637,27 @@ body {
     margin: 0;
 }
 
-/* Grid – más compacto */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    gap: 2.2rem; /* reducido de 3rem */
+    gap: 2.2rem;
     align-items: start;
 }
 
-/* Info de contacto – menos espacio */
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* mucho menos espacio entre items */
+    gap: 1rem;
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem; /* gap reducido */
+    gap: 1rem;
 }
 
 .contact-icon {
-    width: 44px; /* íconos más pequeños */
+    width: 44px;
     height: 44px;
     background: linear-gradient(135deg, #0055cc 0%, #3b82f6 100%);
     border-radius: 12px;
@@ -832,12 +699,10 @@ body {
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   Formulario – Ultra compacto
-   ========================================================================== */
+/* Formulario */
 .contact-form {
     background: rgba(255, 255, 255, 0.94);
-    padding: 1.4rem; /* reducido drásticamente */
+    padding: 1.4rem;
     border-radius: 16px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
     border: 1px solid rgba(0, 85, 204, 0.08);
@@ -845,7 +710,7 @@ body {
 }
 
 .form-group {
-    margin-bottom: 0.9rem; /* menos espacio entre campos */
+    margin-bottom: 0.9rem;
 }
 
 .form-group label {
@@ -859,7 +724,7 @@ body {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem 1rem; /* campos más bajos */
+    padding: 0.75rem 1rem;
     border: 2px solid #e2e8f0;
     border-radius: 10px;
     font-family: inherit;
@@ -877,7 +742,7 @@ body {
 }
 
 .form-group textarea {
-    min-height: 80px; /* textarea más corta */
+    min-height: 80px;
     resize: vertical;
 }
 
@@ -903,126 +768,21 @@ body {
     box-shadow: 0 10px 30px rgba(0, 85, 204, 0.35);
 }
 
-/* Responsive – aún más compacto en móvil */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .contact-form {
-        padding: 1.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-section {
-        padding: 3rem 1.5rem 2.5rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .section-header {
-        margin-bottom: 1.8rem;
-    }
-    .contact-icon {
-        width: 40px;
-        height: 40px;
-    }
-    .contact-icon svg {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 2rem;
-    }
-    .section-subtitle {
-        font-size: 1.2rem;
-    }
-    .form-group input,
-    .form-group textarea {
-        padding: 0.7rem 0.9rem;
-        font-size: 0.92rem;
-    }
-    .btn-submit {
-        padding: 0.8rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* Redes en contacto (mantener consistencia) */
-.contact-redes.redes {
-    display: flex;
-    gap: 1.2rem;
-    margin-top: 1rem;
-}
-
-.contact-redes.redes img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.25s ease;
-}
-
-.contact-redes.redes a:hover img {
-    transform: translateY(-3px);
-}
-
-/* Responsive – ajustes móviles */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2.8rem;
-    }
-    .contact-section {
-        padding: 4rem 1.2rem 3.5rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
-    .contact-form {
-        padding: 1.6rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 2rem;
-    }
-    .section-lead {
-        font-size: 1rem;
-    }
-    .contact-icon {
-        width: 44px;
-        height: 44px;
-    }
-    .contact-icon svg {
-        width: 20px;
-        height: 20px;
-    }
-    .form-group input,
-    .form-group textarea {
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* Reutilizamos los estilos del hero para las redes en contacto */
+/* Redes en contacto */
 .contact-redes.redes {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.4rem; /* misma separación que en hero */
-    margin: 1.8rem 0 0 0; /* un poco más de espacio arriba en contacto */
-    justify-content: flex-start; /* o center si prefieres centrado */
+    gap: 1.4rem;
+    margin: 1.8rem 0 0 0;
+    justify-content: flex-start;
 }
 
 .contact-redes.redes img {
-    width: 36px; /* ← mismo tamaño exacto que en hero */
+    width: 36px;
     height: 36px;
     display: block;
-    border-radius: 8px; /* opcional: si tus iconos tienen bordes redondeados */
-    object-fit: contain; /* evita distorsión */
+    border-radius: 8px;
+    object-fit: contain;
 }
 
 .contact-redes.redes a {
@@ -1032,61 +792,13 @@ body {
 }
 
 .contact-redes.redes a:hover {
-    transform: translateY(-4px); /* mismo efecto hover que hero */
+    transform: translateY(-4px);
 }
 
-/* Si quieres que se vea mejor en móvil */
-@media (max-width: 768px) {
-    .contact-redes.redes {
-        gap: 1.2rem;
-        justify-content: center;
-    }
-}
+/* ============================================================================
+   FOOTER - RESPONSIVE
+   ============================================================================ */
 
-/* ==========================================================================
-   Responsive – Ajustes para móviles y tablets
-   ========================================================================== */
-
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3.5rem;
-    }
-
-    .contact-section {
-        padding: 7rem 1.5rem 5rem;
-    }
-
-    .section-title {
-        font-size: 2.6rem;
-    }
-
-    .contact-form {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    .section-lead {
-        font-size: 1.1rem;
-    }
-
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .contact-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-/* Footer */
 .footer {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
@@ -1105,7 +817,6 @@ body {
 .footer-logo {
     height: 80px;
     margin-bottom: 1.5rem;
-    box-shadow: #e9ecef;
 }
 
 .footer-description {
@@ -1139,6 +850,30 @@ body {
     color: var(--gold);
 }
 
+/* Redes en footer */
+.footer-redes.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-top: 1.8rem;
+    justify-content: flex-start;
+}
+
+.footer-redes.redes img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 10px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: all 0.3s ease;
+}
+
+.footer-redes.redes a:hover img {
+    transform: translateY(-5px) scale(1.1);
+    filter: brightness(1.3) drop-shadow(0 4px 8px rgba(46, 84, 166, 0.4));
+}
+
 .footer-bottom {
     max-width: 1400px;
     margin: 0 auto;
@@ -1148,45 +883,21 @@ body {
     color: rgb(255, 255, 255);
     font-size: 0.9rem;
 }
-/* Redes en el footer – reutiliza .redes del hero */
-.footer-redes.redes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.6rem; /* un poco más de espacio que en hero (ajusta si quieres) */
-    margin-top: 1.8rem; /* separación arriba del párrafo */
-    justify-content: flex-start; /* izquierda, o cambia a center si prefieres centrado */
+
+.footer-copyright {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-redes.redes img {
-    width: 40px; /* un poco más grandes en footer para mejor visibilidad */
-    height: 40px;
-    display: block;
-    border-radius: 10px; /* opcional: redondeado suave */
-    object-fit: contain;
-    filter: brightness(1.1); /* opcional: para que resalten más en fondo oscuro */
-    transition: all 0.3s ease;
-}
+/* ============================================================================
+   WHATSAPP FLOAT BUTTON
+   ============================================================================ */
 
-.footer-redes.redes a:hover img {
-    transform: translateY(-5px) scale(1.1); /* efecto más pronunciado en footer */
-    filter: brightness(1.3) drop-shadow(0 4px 8px rgba(46, 84, 166, 0.4));
-}
-
-/* Ajuste en móvil */
-@media (max-width: 768px) {
-    .footer-redes.redes {
-        justify-content: center;
-        gap: 1.8rem;
-        margin-top: 1.5rem;
-    }
-
-    .footer-redes.redes img {
-        width: 38px;
-        height: 38px;
-    }
-}
-
-/* WhatsApp Float Button */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -1227,10 +938,11 @@ body {
     height: 35px;
     fill: white;
 }
+
 .whatsapp-bubble {
     position: fixed;
-    bottom: 45px; /* Más cerca del botón para que parezca que sale de él */
-    right: 100px; /* ← ¡Aquí está el cambio clave! Empieza más a la derecha */
+    bottom: 45px;
+    right: 100px;
     background: #ffffff;
     color: #111;
     padding: 10px 16px;
@@ -1240,49 +952,49 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
     white-space: nowrap;
     opacity: 0;
-
-    /* Empieza fuera a la derecha + ligeramente más pequeño y desplazado */
-    transform: translateX(140px) scale(0.75); /* ← más lejos para que el deslizamiento sea claro */
-    transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); /* curva más natural y bouncy */
+    transform: translateX(140px) scale(0.75);
+    transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
     pointer-events: none;
     z-index: 999;
 }
 
-/* Flecha apuntando hacia abajo (ahora más centrada respecto al botón) */
 .whatsapp-bubble::after {
     content: "";
     position: absolute;
     bottom: -8px;
-    right: 25px; /* ajustado para que la punta quede más cerca del centro del botón */
+    right: 25px;
     border: 8px solid transparent;
     border-top-color: #ffffff;
 }
 
-/* Estado final: completamente visible, en su posición correcta */
 .whatsapp-bubble.show {
     opacity: 1;
     transform: translateX(0) scale(1);
 }
 
-.footer-copyright {
-    text-align: center;
-    padding: 2rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-gray);
-    font-size: 1.1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* ============================================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================================ */
 
-/* Responsive */
+/* Tablets grandes y laptops pequeñas (1024px) */
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
 
-    .about-content {
+    .about-main-content {
         grid-template-columns: 1fr;
         gap: 3rem;
+        min-height: auto;
+    }
+
+    .about-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-height: 380px;
     }
 
     .services-grid {
@@ -1291,6 +1003,7 @@ body {
 
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 2.8rem;
     }
 
     .footer-content {
@@ -1299,24 +1012,27 @@ body {
     }
 }
 
+/* Tablets (768px) */
 @media (max-width: 768px) {
+    /* Navegación */
     .nav-container {
         padding: 1rem 1.5rem;
     }
 
     .nav-links {
         gap: 1.5rem;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .logo {
-        height: 40px;
+        height: 60px;
     }
 
+    /* Hero */
     .hero {
-        height: auto;
-        min-height: 600px;
-        padding: 8rem 0 4rem;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 2rem;
     }
 
     .hero-content {
@@ -1324,25 +1040,39 @@ body {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .hero-buttons {
         flex-direction: column;
+        align-items: flex-start;
     }
 
+    .redes {
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    /* Secciones */
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 
     .about-section,
-    .services-section,
-    .contact-section {
+    .services-section {
         padding: 5rem 1.5rem;
+    }
+
+    .contact-section {
+        padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .about-image img {
+        max-height: 320px;
     }
 
     .about-stats {
@@ -1350,13 +1080,51 @@ body {
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minMax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-icon {
+        width: 200px;
+        height: 125px;
+        margin: 0.3rem auto 1.2rem;
+    }
+
+    .service-card {
+        padding: 1.2rem 1.8rem 2.8rem;
+        min-height: 420px;
     }
 
     .contact-form {
-        padding: 2rem;
+        padding: 1.2rem;
     }
 
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-redes.redes {
+        justify-content: center;
+    }
+
+    .footer-redes.redes {
+        justify-content: center;
+        gap: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .footer-redes.redes img {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* WhatsApp */
     .whatsapp-float {
         width: 55px;
         height: 55px;
@@ -1368,10 +1136,268 @@ body {
         width: 28px;
         height: 28px;
     }
+
+    .whatsapp-bubble {
+        font-size: 13px;
+        padding: 8px 14px;
+        right: 80px;
+    }
 }
 
-/* Smooth scrolling */
-html {
-    font-size: 15px;
-    scroll-behavior: smooth;
+/* Móviles (576px) */
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 90px;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Secciones */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-section {
+        padding: 5rem 1.5rem 6rem;
+    }
+
+    .about-image img {
+        max-height: 280px;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .services-section {
+        padding: 5.5rem 1.5rem 7.5rem;
+    }
+
+    .services-title {
+        font-size: 2.5rem;
+    }
+
+    .services-header {
+        margin-bottom: 3.2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .service-card {
+        padding: 1.1rem 1.6rem 2.6rem;
+        min-height: auto;
+    }
+
+    .service-icon {
+        width: 180px;
+        height: 110px;
+        margin: 0.3rem auto 1rem;
+    }
+
+    .service-title {
+        font-size: 1.55rem;
+        margin: 0.2rem 0 0.9rem;
+    }
+
+    .service-description {
+        font-size: 1rem;
+        margin-bottom: 1.4rem;
+    }
+
+    /* Contacto */
+    .contact-section {
+        padding: 3rem 1rem 2.5rem;
+    }
+
+    .section-lead {
+        font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.92rem;
+    }
+
+    .btn-submit {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footer-content {
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Móviles muy pequeños (400px) */
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .service-icon {
+        width: 160px;
+        height: 100px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-float svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* ============================================================================
+   LANDSCAPE ORIENTATION (dispositivos en horizontal)
+   ============================================================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        gap: 1rem;
+    }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+    .navbar,
+    .whatsapp-float,
+    .whatsapp-bubble,
+    .hero-buttons,
+    .btn,
+    .footer {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .hero,
+    .about-section,
+    .services-section,
+    .contact-section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================================================
+   ACCESIBILIDAD
+   ============================================================================ */
+
+/* Mejora el contraste para personas con baja visión */
+@media (prefers-contrast: high) {
+    .hero-description,
+    .about-text,
+    .contact-details p {
+        color: #ffffff;
+    }
+
+    .btn {
+        border-width: 3px;
+    }
+}
+
+/* Reduce animaciones para personas sensibles al movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus visible para navegación por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--primary-blue);
+    outline-offset: 2px;
 }
