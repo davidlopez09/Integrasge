@@ -54,11 +54,13 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -74,8 +76,11 @@ html {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 2.5rem;
     align-items: center;
+    margin: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -337,7 +342,7 @@ html {
 
 .section-title {
     font-family: "Lora", serif;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     color: #ffffff;
     font-weight: 700;
     line-height: 1.15;
@@ -1243,10 +1248,6 @@ html {
         gap: 1.6rem;
     }
 
-    .stat-number {
-        font-size: 3rem;
-    }
-
     .services-section {
         padding: 5.5rem 1.5rem 7.5rem;
     }
@@ -1318,6 +1319,11 @@ html {
 
 /* Móviles muy pequeños (400px) */
 @media (max-width: 400px) {
+    .nav-container {
+        padding: 1rem 1.2rem;
+        gap: 1rem;
+    }
+
     .hero-content {
         padding: 0 1rem;
     }
