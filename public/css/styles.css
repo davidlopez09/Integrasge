@@ -1028,7 +1028,7 @@ html {
         height: 60px;
     }
 
-    /* Hero */
+    /* Hero - mejorado para tablets */
     .hero {
         min-height: 100vh;
         padding-top: 100px;
@@ -1041,19 +1041,31 @@ html {
 
     .hero-title {
         font-size: 2.2rem;
+        line-height: 1.3;
     }
 
     .hero-description {
         font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
+    /* Botones lado a lado en tablets */
     .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 160px;
+        text-align: center;
+        padding: 0.9rem 1.5rem;
     }
 
     .redes {
-        justify-content: center;
+        justify-content: flex-start;
         gap: 1.2rem;
     }
 
@@ -1150,32 +1162,63 @@ html {
         font-size: 14px;
     }
 
-    /* Hero */
+    /* Hero - optimizado para móviles */
     .hero {
         padding-top: 90px;
+        padding-bottom: 1.5rem;
     }
 
     .hero-content {
-        padding: 0 1rem;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
+        padding: 0 1.2rem;
     }
 
     .hero-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+        line-height: 1.25;
+        margin-bottom: 1.2rem;
     }
 
     .hero-description {
         font-size: 0.95rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.8rem;
+        line-height: 1.6;
     }
 
-    .btn {
-        padding: 0.9rem 2rem;
-        font-size: 0.95rem;
+    /* BOTONES LADO A LADO EN MÓVILES - Optimizado */
+    .hero-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 145px;
+        max-width: calc(50% - 0.4rem);
+        padding: 0.85rem 1.2rem;
+        font-size: 0.88rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /* Redes sociales centradas en móvil */
+    .redes {
+        justify-content: flex-start;
+        gap: 1rem;
+        margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .redes img {
+        width: 32px;
+        height: 32px;
     }
 
     /* Secciones */
@@ -1275,8 +1318,40 @@ html {
 
 /* Móviles muy pequeños (400px) */
 @media (max-width: 400px) {
+    .hero-content {
+        padding: 0 1rem;
+    }
+
     .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Botones más compactos en pantallas muy pequeñas */
+    .hero-buttons {
+        gap: 0.6rem;
+    }
+
+    .hero-buttons .btn {
+        min-width: 135px;
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Redes más pequeñas */
+    .redes {
+        gap: 0.9rem;
+        margin: 1rem 0 1.5rem 0;
+    }
+
+    .redes img {
+        width: 30px;
+        height: 30px;
     }
 
     .section-title {
@@ -1310,6 +1385,36 @@ html {
     }
 }
 
+/* Móviles extremadamente pequeños (350px o menos) */
+@media (max-width: 350px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    /* En pantallas muy pequeñas, botones apilados */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .redes img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
 /* ============================================================================
    LANDSCAPE ORIENTATION (dispositivos en horizontal)
    ============================================================================ */
@@ -1317,20 +1422,68 @@ html {
 @media (max-height: 600px) and (orientation: landscape) {
     .hero {
         min-height: 100vh;
-        padding-top: 100px;
+        padding-top: 90px;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 0 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+        margin-bottom: 0.8rem;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
 
     .hero-description {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
     }
 
     .hero-buttons {
+        gap: 0.8rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .redes {
+        margin: 1rem 0 1.5rem 0;
         gap: 1rem;
+    }
+
+    .redes img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Landscape para pantallas pequeñas */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
     }
 }
 
