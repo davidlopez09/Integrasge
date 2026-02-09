@@ -141,7 +141,8 @@ html {
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding-top: 120px; /* Espacio para el navbar fijo */
+    padding-top: 120px;
+    /* Espacio para el navbar fijo */
     padding-bottom: 3rem;
 }
 
@@ -249,6 +250,7 @@ html {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -362,6 +364,9 @@ html {
     color: #e0f2fe;
     line-height: 1.9;
     padding-right: 1rem;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
 }
 
 .about-text p {
@@ -567,6 +572,9 @@ html {
     margin-bottom: 1.8rem;
     font-size: 1.05rem;
     flex-grow: 1;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
 }
 
 .btn-service {
@@ -926,6 +934,7 @@ html {
         transform: scale(1);
         box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
     }
+
     50% {
         transform: scale(1.05);
         box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);

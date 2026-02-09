@@ -236,10 +236,3 @@ if (menuToggleButton) {
         }
     });
 }
-
-// ============================================================================
-// CONSOLE INFO
-// ============================================================================
-
-console.log("%c🚀 INTEGRASGE Website", "color: #2e54a6; font-size: 20px; font-weight: bold;");
-console.log("%cDesarrollado con ❤️ por Edutech Ltda", "color: #2aa5a8; font-size: 14px;");
