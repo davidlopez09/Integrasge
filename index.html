@@ -3,14 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>INTEGRASGE - Servicios de Gestión Empresarial</title>
+        <title>INTEGRASGE</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!--colocar icono de pestaña-->
+        <link rel="icon" type="image/x-icon" href="./public/image/logo.png" />
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600&display=swap"
             rel="stylesheet"
         />
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <link rel="stylesheet" href="./public/css/styles.css" />
+        <link rel="stylesheet" href="./public/css/navbar-responsive-addon.css" />
     </head>
     <body>
         <!-- Navigation -->
@@ -30,14 +34,42 @@
 
         <!-- Hero Section -->
         <section class="hero" id="inicio">
+            <!-- Capa de imagen sutil de fondo -->
+            <div class="hero-bg-image"></div>
+
+            <!-- Overlay SVG con formas abstractas -->
             <div class="hero-image-overlay"></div>
+
+            <!-- Contenido principal -->
             <div class="hero-content">
-                <div class="hero-subtitle">Desde 2022 a su servicio</div>
-                <h1 class="hero-title">Gestión Empresarial con Excelencia y Precisión</h1>
+                <div class="hero-subtitle">-- Desde 2022 a su servicio --</div>
+                <h1 class="hero-title typewriter">
+                    Gestión integral en contabilidad, impuestos, finanzas y administración de nómina
+                </h1>
                 <p class="hero-description">
-                    Soluciones contables integrales y servicios de outsourcing empresarial diseñados para impulsar el
-                    crecimiento y la eficiencia de su organización.
+                    Estructuramos un plan de servicios ajustado a la realidad de su proyecto, negocio o emprendimiento,
+                    establecemos una alianza estratégica profesional con el empresario y/o emprendedor. La formalización
+                    de los negocios y el sostenimiento organizacional es el pilar de nuestra misionalidad. El peso
+                    natural de las obligaciones laborales, tributarias y administrativas son barreras que nos disponemos
+                    a levantar con el accionar efectivo de un equipo profesional interdisciplinario que ponemos a su
+                    servicio.
                 </p>
+
+                <!-- Redes sociales – ahora en fila horizontal -->
+                <div class="redes">
+                    <a href="https://www.facebook.com/integrasge" target="_blank" aria-label="Facebook">
+                        <img src="./public/image/iconoFacebook.webp" alt="Facebook" />
+                    </a>
+                    <a href="https://www.instagram.com/integrasge/" target="_blank" aria-label="Instagram">
+                        <img src="./public/image/instagramLogo.jpg" alt="Instagram" />
+                    </a>
+                    <!-- red de linkend-->
+                    <a href="https://www.linkedin.com/company/integrasge" target="_blank" aria-label="LinkedIn">
+                        <img src="./public/image/linkedin_logo.png" alt="LinkedIn" />
+                    </a>
+                </div>
+
+                <!-- Botones -->
                 <div class="hero-buttons">
                     <a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
                     <a href="#contacto" class="btn btn-secondary">Solicitar Consulta</a>
@@ -50,29 +82,27 @@
             <div class="section-container">
                 <div class="section-header">
                     <div class="section-subtitle">INTEGRASGE</div>
-                    <h2 class="section-title">Tu aliado estratégico en crecimiento y cumplimiento</h2>
+                    <h2 class="section-title">Tu aliado estratégico en cumplimiento, sostenibilidad y crecimiento</h2>
                 </div>
 
                 <div class="about-main-content">
                     <div class="about-text">
-                        <h3 class="about-subtitle">Gestión empresarial inteligente desde Barranquilla</h3>
-
                         <p>
-                            En INTEGRASGE nos especializamos en <strong>outsourcing contable</strong>, soluciones
-                            financieras integrales y optimización administrativa para empresas colombianas que quieren
-                            enfocarse en crecer sin preocupaciones operativas.
-                        </p>
-
-                        <p>
-                            Desde 2022 combinamos expertise técnico actualizado con conocimiento profundo del entorno
-                            normativo local, entregando servicios personalizados que generan eficiencia, reducen riesgos
-                            y potencian resultados sostenibles.
+                            INTEGRA SERVICIOS DE GESTION EMPRESARIAL SAS (en adelante ISGE), emerge de la espontaneidad
+                            de un debate, de la exposición de realidades que confluyen, dibujan panoramas y develan
+                            contextos. ISGE no pretende ser respuesta, ISGE propone ser acción. Nuestro focus
+                            organizacional es el empoderamiento corporativo del emprendedor; deshacer a través de la
+                            acción efectiva de un equipo interdisciplinario, íntegro y competente, los obstáculos que
+                            limitan la formalización de los negocios y por ende el desarrollo de los mismos. En
+                            concordancia, nuestros servicios simplifican el control organizacional, gestamos el
+                            escenario más propicio, para que el empresario encause su capacidad y talento, en
+                            desarrollar plenamente su idea de negocio, producir y crecer.
                         </p>
                     </div>
 
                     <div class="about-image">
                         <img
-                            src="./public/image/cont.png"
+                            src="./public/image/imagenNosotros.png"
                             alt="Gestión empresarial inteligente - INTEGRASGE"
                             loading="lazy"
                         />
@@ -89,8 +119,8 @@
                         <div class="stat-label">Compromiso</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Soporte Continuo</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Cumplimiento Normativo</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">+50</div>
@@ -107,31 +137,54 @@
                     <div class="section-subtitle">Nuestros Servicios</div>
                     <h2 class="section-title">Soluciones Empresariales Integrales</h2>
                 </div>
+
                 <div class="services-grid">
+                    <!-- 1 -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="./public/image/contabilidad.jpg" alt="Contabilidad Integral" loading="lazy" />
+                            <img src="./public/image/contabilidad.jpg" alt="Contabilidad General" loading="lazy" />
                         </div>
-                        <h3 class="service-title">Contabilidad Integral</h3>
+                        <h3 class="service-title">Contabilidad General</h3>
                         <p class="service-description">
-                            Gestión completa de su información contable con registro de operaciones, elaboración de
-                            estados financieros, análisis de indicadores y cumplimiento normativo bajo estándares NIIF.
+                            Registro y control de operaciones contables, elaboración de estados financieros y
+                            cumplimiento normativo bajo estándares NIIF, garantizando información clara y confiable.
                         </p>
-                        <a href="#contacto" class="btn-service">Solicitar Asesoría</a>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
                     </div>
 
+                    <!-- 2 -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="./public/image/Outsourcing.jpg" alt="Outsourcing Contable" loading="lazy" />
+                            <img src="./public/image/Digitalizar.jpg" alt="Digitalización Contable" loading="lazy" />
                         </div>
-                        <h3 class="service-title">Outsourcing Contable</h3>
+                        <h3 class="service-title">Digitalización y Sistematización Contable</h3>
                         <p class="service-description">
-                            Externalización estratégica de procesos contables y financieros que le permite enfocarse en
-                            el core de su negocio mientras garantizamos la precisión y oportunidad de su información.
+                            Organización, digitalización y sistematización web de la información contable para optimizar
+                            procesos, control y acceso seguro a los datos financieros.
                         </p>
-                        <a href="#contacto" class="btn-service">Solicitar Asesoría</a>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
                     </div>
 
+                    <!-- 3 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./public/image/estadosfinancieros.jpg" alt="Estados Financieros" loading="lazy" />
+                        </div>
+                        <h3 class="service-title">Elaboración de Estados Financieros</h3>
+                        <p class="service-description">
+                            Preparación y análisis de estados financieros para la correcta evaluación del desempeño
+                            económico y apoyo en la toma de decisiones empresariales.
+                        </p>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
+                    </div>
+
+                    <!-- 4 -->
                     <div class="service-card">
                         <div class="service-icon">
                             <img
@@ -142,47 +195,92 @@
                         </div>
                         <h3 class="service-title">Declaraciones Tributarias</h3>
                         <p class="service-description">
-                            Preparación y presentación de declaraciones de renta, IVA, retención en la fuente e
-                            industria y comercio, asegurando el cumplimiento de obligaciones fiscales de manera
-                            oportuna.
+                            Preparación y presentación de declaraciones tributarias nacionales, distritales y
+                            municipales, incluyendo renta, IVA, Retefuente, ICA y demás obligaciones relacionadas con el
+                            RST
                         </p>
-                        <a href="#contacto" class="btn-service">Solicitar Asesoría</a>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
                     </div>
 
+                    <!-- 5 -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="./public/image/asesorias.webp" alt="Asesoría Financiera" loading="lazy" />
+                            <img src="./public/image/planeacion.webp" alt="Planeación Tributaria" loading="lazy" />
                         </div>
-                        <h3 class="service-title">Asesoría Financiera</h3>
+                        <h3 class="service-title">Planeación Tributaria</h3>
                         <p class="service-description">
-                            Análisis financiero, proyecciones presupuestales, evaluación de indicadores de gestión y
-                            recomendaciones estratégicas para la toma de decisiones empresariales acertadas.
+                            Análisis y planificación tributaria para personas naturales y jurídicas, optimizando la
+                            carga fiscal dentro del marco legal vigente.
                         </p>
-                        <a href="#contacto" class="btn-service">Solicitar Asesoría</a>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
                     </div>
 
+                    <!-- 6 -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="./public/image/nomina.jpg" alt="Nómina y Recursos Humanos" loading="lazy" />
+                            <img src="./public/image/medios-magneticos.jpg" alt="Medios Magnéticos" loading="lazy" />
                         </div>
-                        <h3 class="service-title">Nómina y Recursos Humanos</h3>
+                        <h3 class="service-title">Medios Magnéticos y Devoluciones</h3>
                         <p class="service-description">
-                            Procesamiento de nómina, liquidación de prestaciones sociales, gestión de seguridad social y
-                            parafiscales, cumpliendo rigurosamente la legislación laboral vigente.
+                            Elaboración de medios magnéticos y gestión de devoluciones y compensaciones de saldos a
+                            favor ante las entidades correspondientes.
                         </p>
-                        <a href="#contacto" class="btn-service">Solicitar Asesoría</a>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
                     </div>
 
+                    <!-- 7 -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="./public/image/revisioria.jpg" alt="Revisoría Fiscal" loading="lazy" />
+                            <img
+                                src="./public/image/Outsourcing-admins.webp"
+                                alt="Outsourcing Administrativo"
+                                loading="lazy"
+                            />
                         </div>
-                        <h3 class="service-title">Revisoría Fiscal</h3>
+                        <h3 class="service-title">Outsourcing Administrativo</h3>
                         <p class="service-description">
-                            Evaluación independiente del control interno, verificación del cumplimiento normativo y
-                            emisión de dictámenes sobre la razonabilidad de la información financiera de su empresa.
+                            Gestión administrativa integral que incluye facturación, control de cuentas por pagar y
+                            cobrar, manejo de cartera e inclusión de pagos por banca virtual.
                         </p>
-                        <a href="#contacto" class="btn-service">Solicitar Asesoría</a>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./public/image/nomina.jpg" alt="Administración de Nómina" loading="lazy" />
+                        </div>
+                        <h3 class="service-title">Administración de Nómina y Personal</h3>
+                        <p class="service-description">
+                            Liquidación y contabilización de nómina, gestión de novedades, contratos, afiliaciones y
+                            aportes parafiscales conforme a la legislación laboral vigente.
+                        </p>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
+                    </div>
+
+                    <!-- 9 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="./public/image/consultoria.jpg" alt="Consultoría Legal" loading="lazy" />
+                        </div>
+                        <h3 class="service-title">Consultoría Legal y Corporativa</h3>
+                        <p class="service-description">
+                            Asesoría legal en constitución de sociedades, temas laborales y procesos de devoluciones y
+                            compensaciones tributarias a nivel local y corporativo.
+                        </p>
+                        <a href="#" class="btn-service whatsapp-btn" data-service="Contabilidad General"
+                            >Solicitar Asesoría</a
+                        >
                     </div>
                 </div>
             </div>
@@ -193,51 +291,144 @@
             <div class="contact-container">
                 <div class="section-header">
                     <div class="section-subtitle">Contáctenos</div>
-                    <h2 class="section-title">Estamos Aquí Para Ayudarle</h2>
+                    <h2 class="section-title">Estamos aquí para ayudarle</h2>
+                    <p class="section-lead">
+                        Déjenos sus datos y un asesor se pondrá en contacto en las próximas 24 horas.
+                    </p>
                 </div>
+
                 <div class="contact-grid">
+                    <!-- Info lateral -->
                     <div class="contact-info">
+                        <!-- Correo -->
                         <div class="contact-item">
-                            <div class="contact-icon">📧</div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                    />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
                             <div class="contact-details">
                                 <h3>Correo Electrónico</h3>
-                                <p>info@integrasge.com<br />contacto@integrasge.com</p>
+                                <p><a href="mailto:contacto@integrasge.com">contacto@integrasge.com</a></p>
                             </div>
                         </div>
+
+                        <!-- Teléfono (solo números, sin horario) -->
                         <div class="contact-item">
-                            <div class="contact-icon">📱</div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    />
+                                </svg>
+                            </div>
                             <div class="contact-details">
                                 <h3>Teléfono</h3>
-                                <p>+57 (300) 123-4567<br />Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                                <p>
+                                    <a href="tel:+573103939734">+57 (310) 393-9734</a><br />
+                                    <a href="tel:+576053455132">(605) 345-5132</a>
+                                </p>
                             </div>
                         </div>
+
+                        <!-- Horario de Atención – nuevo ítem independiente -->
                         <div class="contact-item">
-                            <div class="contact-icon">📍</div>
+                            <div class="contact-icon">
+                                <!-- Ícono de reloj (estilo línea, igual que los otros – de Lucide/Feather) -->
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <circle cx="12" cy="13" r="8" />
+                                    <polyline points="12 9 12 13 14 15" />
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Horario de Atención</h3>
+                                <p>
+                                    Lunes a Viernes: 8:00 AM - 6:00 PM<br />
+                                    Sábado: 9:00 AM - 2:00 PM<br />
+                                    Domingo: Cerrado
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ubicación + redes -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
                             <div class="contact-details">
                                 <h3>Ubicación</h3>
-                                <p>Barranquilla, Colombia<br />Atención presencial con cita previa</p>
+                                <p>Barranquilla, Colombia</p>
+                                <b>CR 43 72 122 OF 506 ED CENTRO DE PROFESIONALES</b>
+
+                                <!-- Redes sociales (ya las tienes bien) -->
+                                <div class="contact-redes redes">
+                                    <a href="https://www.facebook.com/integrasge" target="_blank" aria-label="Facebook">
+                                        <img src="./public/image/iconoFacebook.webp" alt="Facebook" />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/integrasge/"
+                                        target="_blank"
+                                        aria-label="Instagram"
+                                    >
+                                        <img src="./public/image/instagramLogo.jpg" alt="Instagram" />
+                                    </a>
+                                    <!-- red de linkend-->
+                                    <a
+                                        href="https://www.linkedin.com/company/integrasge"
+                                        target="_blank"
+                                        aria-label="LinkedIn"
+                                    >
+                                        <img src="./public/image/linkedin_logo.png" alt="LinkedIn" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Formulario -->
                     <div class="contact-form">
-                        <form>
+                        <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" required />
+                                <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez" />
                             </div>
                             <div class="form-group">
                                 <label for="email">Correo Electrónico</label>
-                                <input type="email" id="email" required />
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    placeholder="ejemplo@empresa.com"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" required />
+                                <input type="tel" id="phone" name="phone" required placeholder="+57 300 123 4567" />
                             </div>
                             <div class="form-group">
                                 <label for="message">Mensaje</label>
-                                <textarea id="message" required></textarea>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    placeholder="Cuéntenos cómo podemos ayudarle..."
+                                ></textarea>
                             </div>
-                            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                            <button type="submit" class="btn-submit">Enviar Consulta</button>
                         </form>
                     </div>
                 </div>
@@ -248,12 +439,29 @@
         <footer class="footer">
             <div class="footer-content">
                 <div>
-                    <img src="./public/image/logo.png" alt="INTEGRASGE Logo" class="footer-logo" />
-                    <p class="footer-description">
-                        Servicios de gestión empresarial con excelencia, transparencia y compromiso. Somos su aliado
-                        estratégico para el crecimiento sostenible de su organización.
-                    </p>
+                    <div>
+                        <img src="./public/image/logoblanco.png" alt="INTEGRASGE Logo" class="footer-logo" />
+                        <p class="footer-description">
+                            Servicios de gestión empresarial con excelencia, transparencia y compromiso. Somos su aliado
+                            estratégico para el crecimiento sostenible de su organización.
+                        </p>
+
+                        <!-- Redes sociales – mismo estilo y archivos que en hero y contacto -->
+                        <div class="footer-redes redes">
+                            <a href="https://www.facebook.com/integrasge" target="_blank" aria-label="Facebook">
+                                <img src="./public/image/iconoFacebook.webp" alt="Facebook" />
+                            </a>
+                            <a href="https://www.instagram.com/integrasge/" target="_blank" aria-label="Instagram">
+                                <img src="./public/image/instagramLogo.jpg" alt="Instagram" />
+                            </a>
+                            <!-- red de linkend-->
+                            <a href="https://www.linkedin.com/company/integrasge" target="_blank" aria-label="LinkedIn">
+                                <img src="./public/image/linkedin_logo.png" alt="LinkedIn" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
                 <div>
                     <h3 class="footer-title">Enlaces Rápidos</h3>
                     <ul class="footer-links">
@@ -274,18 +482,34 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 INTEGRASGE - Servicios de Gestión Empresarial. Todos los derechos reservados.</p>
+                <div class="footer-copyright">
+                    <p>
+                        © 2025 INTEGRASGE. Todos los derechos reservados. |
+                        <a
+                            class="cc"
+                            href="https://davidlopez09.github.io/edutechltda/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="color: #2aa5a8; text-decoration: none; font-weight: bold"
+                        >
+                            Edutech Ltda
+                        </a>
+                    </p>
+                </div>
             </div>
         </footer>
 
         <!-- WhatsApp Float Button -->
-        <a href="https://wa.me/573001234567" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <a href="https://wa.me/573103939734" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.194-2.116c2.366 1.288 5.041 1.968 7.806 1.968 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.238 1.355 1.396-5.193-0.322-0.527c-1.343-2.201-2.052-4.746-2.052-7.373 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM23.407 19.93c-0.42-0.21-2.482-1.226-2.867-1.366-0.385-0.14-0.665-0.21-0.945 0.21s-1.085 1.366-1.33 1.646c-0.245 0.28-0.49 0.315-0.91 0.105s-1.775-0.654-3.38-2.084c-1.25-1.113-2.094-2.488-2.339-2.908s-0.026-0.646 0.184-0.856c0.189-0.188 0.42-0.49 0.63-0.735s0.28-0.42 0.42-0.7c0.14-0.28 0.070-0.525-0.035-0.735s-0.945-2.275-1.295-3.115c-0.341-0.818-0.687-0.707-0.945-0.72-0.245-0.012-0.525-0.015-0.805-0.015s-0.735 0.105-1.12 0.525c-0.385 0.42-1.47 1.436-1.47 3.503s1.505 4.063 1.715 4.343c0.21 0.28 2.958 4.519 7.17 6.338 1.001 0.433 1.782 0.691 2.391 0.884 1.007 0.321 1.923 0.276 2.647 0.167 0.807-0.121 2.482-1.015 2.832-1.995s0.35-1.82 0.245-1.995c-0.105-0.175-0.385-0.28-0.805-0.49z"
                 />
             </svg>
         </a>
+
+        <!-- Burbuja de ayuda -->
+        <div class="whatsapp-bubble" id="whatsappBubble">¿Necesitas asesoría?</div>
 
         <script src="./public/js/script.js"></script>
     </body>
