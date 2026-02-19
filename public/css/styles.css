@@ -629,8 +629,8 @@ html {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 2.2rem;
+    grid-template-columns: 0.9fr 1.3fr; /* 🔥 más ancho el form */
+    gap: 2rem;
     align-items: start;
 }
 
@@ -692,7 +692,7 @@ html {
 /* Formulario */
 .contact-form {
     background: rgba(255, 255, 255, 0.94);
-    padding: 1.4rem;
+    padding: 1.1rem 1.3rem; /* 🔥 menos alto */
     border-radius: 16px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
     border: 1px solid rgba(0, 85, 204, 0.08);
@@ -700,7 +700,7 @@ html {
 }
 
 .form-group {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.65rem; /* 🔥 más compacto */
 }
 
 .form-group label {
@@ -732,7 +732,7 @@ html {
 }
 
 .form-group textarea {
-    min-height: 80px;
+    min-height: 65px; /* 🔥 menos alto */
     resize: vertical;
 }
 
@@ -1357,7 +1357,7 @@ html {
 
     .form-group input,
     .form-group textarea {
-        padding: 0.7rem 0.9rem;
+        padding: 0.6rem 0.9rem; /* 🔥 más compacto */
         font-size: 0.92rem;
     }
 
